@@ -23,7 +23,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 /* HEADER */
 header {
   display: flex;
@@ -48,7 +47,7 @@ header {
 .nav-menu {
   list-style: none;
   display: flex;
-  height:100%;
+  height: 100%;
 }
 
 .nav-menu a {
@@ -56,22 +55,17 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height:100%;
+  height: 100%;
   color: var(--secondary-color);
   font-weight: 500;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
   transition: color 0.3s ease;
 }
 
-  /* hover on mouse */
-  .nav-menu a:hover {
-    color: var(--accent-color);
-  }
-
-  /* current page */
-  .nav-menu a.current {
-    color: var(--accent-color);
-  }
+.nav-menu a:hover,
+.nav-menu a.current {
+  color: var(--accent-color);
+}
 
 /* Hamburger Menu */
 .menu-toggle {
@@ -85,10 +79,8 @@ header {
   position: absolute;
   right: 2rem;
   z-index: 9999;
-  overflow: visible;
-  align-items: center;
   justify-content: center;
-  height:100%;
+  height: 100%;
 }
 
 .menu-icon {
@@ -96,10 +88,14 @@ header {
   height: 0.2rem;
   border-radius: 0.2rem;
   background-color: var(--secondary-color);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
-/* X icon for the menu */
+.menu-toggle:hover .menu-icon {
+  background-color: var(--accent-color);
+}
+
+/* X icon for Hamburger menu */
 .menu-toggle.open .menu-icon:nth-child(1) {
   transform: translateY(0.5rem) rotate(-45deg);
 }
@@ -117,7 +113,6 @@ header {
   .nav-menu {
     display: flex;
     flex-direction: column;
-    gap: 0;
     position: fixed;
     top: 0;
     right: 0;
@@ -127,9 +122,8 @@ header {
     padding-top: 5rem;
     transition: transform 0.3s ease;
     transform: translateX(100%);
-    z-index: 1000;
   }
-
+  
   .nav-menu li {
     min-height: 47.3333px;
   }
@@ -141,13 +135,7 @@ header {
     transition: background-color 0.3s ease;
   }
 
-  /* hover on mouse */
-  .nav-menu a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-  }
-
-  /* current page */
+  .nav-menu a:hover,
   .nav-menu a.current {
     background-color: var(--accent-color);
     color: var(--secondary-color);
@@ -163,21 +151,23 @@ header {
 }
 
 @media (max-width: 300px) {
-  .nav-menu{
+  .nav-menu {
     width: 100%;
   }
-  .nav-menu li {
+  .nav-menu a {
     text-align: center;
   }
 }
 
+/* SECTION */
 section {
   padding: 2rem;
   min-height: 100vh;
-  padding-top: 52.13px;
+  padding-top: 52.67px;
 }
 
-#hero {
+/* HERO */
+#home {
   background-color: var(--accent-color);
   color: var(--primary-color);
   /* display: flex;

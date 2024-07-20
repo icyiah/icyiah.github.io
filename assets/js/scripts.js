@@ -4,7 +4,7 @@ window.addEventListener("resize", () => {
   document.body.classList.add("resize-animation-stopper");
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    document.   body.classList.remove("resize-animation-stopper");
+    document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
 
@@ -13,15 +13,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.querySelector('.nav-menu');
   const nav = document.querySelector('nav');
 
+  // Function to highlight the active link
+  function updateActiveLink() {
+    const currentHash = window.location.hash;
+    const navLinks = navMenu.querySelectorAll('a');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentHash) {
+        link.classList.add('current');
+      } else {
+        link.classList.remove('current');
+      }
+    });
+  }
+
+  // Run the function on page load
+  updateActiveLink();
+
+  // Listen for hash changes
+  window.addEventListener('hashchange', updateActiveLink);
+
   // Toggle nav bar from top to side
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('show');
+    menuToggle.classList.toggle('open');
   });
 
-  // Hide Side Bar when 
+  // Hide Side Bar when List Clicked
   navMenu.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
       navMenu.classList.remove('show');
+      menuToggle.classList.remove('open');
     }
   });
 
@@ -29,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && navMenu.classList.contains('show') && !menuToggle.contains(e.target)) {
       navMenu.classList.remove('show');
+      menuToggle.classList.remove('open');
     }
   });
 });

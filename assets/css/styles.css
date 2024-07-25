@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url('general-sans.css');
+@import url('cabinet-grotesk.css');
 
 :root {
   --primary-color: #ffffff;
-  --secondary-color: #435b4d; /* Alternate option: #45523e */
+  --secondary-color: #435b4d; /*#8c8c7c; #45523e */
   --accent-color: #ffa048;
 }
 
@@ -10,7 +12,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family:  CabinetGrotesk-Regular;
+  font-size: 1.2rem;
+  /* font-family:  "Poppins", sans-serif; */
   overflow-x: hidden;
 }
 
@@ -37,8 +41,9 @@ header {
 }
 
 .logo {
+  font-family: GeneralSans-Regular;
   font-size: 1.5rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: var(--secondary-color);
   user-select: none;
   padding: 0.5rem 0;
@@ -51,6 +56,7 @@ header {
 }
 
 .nav-menu a {
+  font-family: GeneralSans-Variable;
   text-decoration: none;
   display: flex;
   align-items: center;

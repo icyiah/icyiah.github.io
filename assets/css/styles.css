@@ -259,6 +259,13 @@ section {
   .text-content {
     order: 2; /* Ensure text is below the image */
   }
+  .text-content h1{
+    font-size: var(--font-xxxxl);
+  }
+  .text-content p{
+    font-size: var(--font-m);
+  }
+
   .image-container {
     order: 1; /* Ensure image is on top */
   }

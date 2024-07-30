@@ -1,5 +1,6 @@
 // Stop resize animations
 let resizeTimer;
+
 window.addEventListener("resize", () => {
   document.body.classList.add("resize-animation-stopper");
   clearTimeout(resizeTimer);

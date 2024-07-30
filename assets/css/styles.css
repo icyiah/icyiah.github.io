@@ -1,20 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-@import url('general-sans.css');
-@import url('cabinet-grotesk.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-  --primary-color: #ffffff;
-  --secondary-color: #435b4d; /*#8c8c7c; #45523e */
-  --accent-color: #ffa048;
+
+  /* Colour Variables */
+  --primary-color: #F5F5F5;
+  --secondary-color: #174727; /*#435b4d; #8c8c7c; #45523e */
+  --accent-color: #C08C3B;
+  --hover-color: #e6e6e6;
+
+  /* Margin Variables */
+  --margin-xxs: 0.25rem;
+  --margin-xs: 0.5rem;
+  --margin-s: 0.75rem;
+  --margin-m: 1rem;
+  --margin-l: 1.25rem;
+  --margin-xl: 1.75rem;
+  --margin-xxl: 2.5rem;
+
+  /* Font Size Variables */
+  --font-xs: 0.75rem; /* 12px */
+  --font-s: 0.875rem; /* 14px */
+  --font-m: 1rem; /* 16px */
+  --font-l: 1.25rem; /* 20px */
+  --font-xl: 1.5rem; /* 24px */
+  --font-xxl: 1.75rem; /* 28px */
+  --font-xxxl: 2rem; /* 32px */
+  --font-xxxxl: 2.5rem; /* 40px */
+  --font-xxxxxl: 3rem; /* 48px */
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:  CabinetGrotesk-Regular;
-  font-size: 1.2rem;
-  /* font-family:  "Poppins", sans-serif; */
+  font-family:  "Poppins", sans-serif;
   overflow-x: hidden;
 }
 
@@ -32,7 +52,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  padding: 0 1rem 0 2rem;
+  padding: 0 min(8rem, 10vw) 0 min(9rem, 10vw);;
   background-color: var(--primary-color);
   position: fixed;
   width: 100%;
@@ -41,12 +61,12 @@ header {
 }
 
 .logo {
-  font-family: GeneralSans-Regular;
-  font-size: 1.5rem;
-  /* font-weight: 600; */
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  font-size: var(--font-xxl);
   color: var(--secondary-color);
   user-select: none;
-  padding: 0.5rem 0;
+  padding: var(--margin-s) 0;
 }
 
 .nav-menu {
@@ -56,21 +76,23 @@ header {
 }
 
 .nav-menu a {
-  font-family: GeneralSans-Variable;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: var(--font-l);
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   color: var(--secondary-color);
-  font-weight: 500;
-  padding: 0 1rem;
-  transition: color 0.3s ease;
+  padding: 0 var(--margin-s);
+  transition: color 0.4s ease, font-weight 0.3s ease;
 }
 
 .nav-menu a:hover,
 .nav-menu a.current {
   color: var(--accent-color);
+  font-weight: 500;
 }
 
 /* Hamburger Menu */
@@ -129,14 +151,14 @@ header {
     transition: transform 0.3s ease;
     transform: translateX(100%);
   }
-  
+
   .nav-menu li {
-    min-height: 47.3333px;
+    min-height: 50px;
   }
 
   .nav-menu a {
     display: block;
-    padding: 0.75rem 1.5rem;
+    padding: var(--margin-s) var(--margin-xl);
     color: var(--secondary-color);
     transition: background-color 0.3s ease;
   }
@@ -169,17 +191,22 @@ header {
 section {
   padding: 2rem;
   min-height: 100vh;
-  padding-top: 52.67px;
+  padding-top: 60.67px;
 }
 
 /* HERO */
 #home {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
+  background-color: white;
+  color: var(--secondary-color);
   /* display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center; */
+}
+
+h1{
+  font-size: 2.986rem;
+  /* background-color: red; */
 }
 

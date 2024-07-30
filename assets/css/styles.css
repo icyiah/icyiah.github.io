@@ -251,7 +251,7 @@ section {
   }
 
   /* HOME */
-  .home-content {
+  #home .home-content {
     flex-direction: column;
     align-items: center;
     gap: var(--margin-xxs);
